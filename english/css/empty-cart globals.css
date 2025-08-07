@@ -1,0 +1,31 @@
+:root {
+  --white: rgba(243, 243, 243, 1);
+  --black: rgba(20, 23, 24, 1);
+  --grey: rgba(178, 178, 178, 1);
+  --primary: rgba(12, 87, 132, 1);
+  --secondary: rgba(239, 147, 35, 1);
+  --headings-3-font-family: "Poppins", Helvetica;
+  --headings-3-font-weight: 500;
+  --headings-3-font-size: 16px;
+  --headings-3-letter-spacing: 0px;
+  --headings-3-line-height: normal;
+  --headings-3-font-style: normal;
+  --popup-font-family: "Poppins", Helvetica;
+  --popup-font-weight: 400;
+  --popup-font-size: 12px;
+  --popup-letter-spacing: 0px;
+  --popup-line-height: normal;
+  --popup-font-style: normal;
+  --headings-2-font-family: "Poppins", Helvetica;
+  --headings-2-font-weight: 500;
+  --headings-2-font-size: 24px;
+  --headings-2-letter-spacing: 0px;
+  --headings-2-line-height: normal;
+  --headings-2-font-style: normal;
+  --buttons-font-family: "Poppins", Helvetica;
+  --buttons-font-weight: 400;
+  --buttons-font-size: 16px;
+  --buttons-letter-spacing: 0px;
+  --buttons-line-height: normal;
+  --buttons-font-style: normal;
+}

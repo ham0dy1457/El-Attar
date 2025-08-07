@@ -1,0 +1,1952 @@
+/* Hide scrollbars globally */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+} 
+
+/* Language Dropdown Styles */
+.flash-sale .language-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none;
+  min-width: 120px;
+}
+
+.flash-sale .language-dropdown.show {
+  display: block;
+}
+
+.flash-sale .language-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flash-sale .language-option:hover {
+  background-color: #f5f5f5;
+}
+
+.flash-sale .language-option input[type="radio"] {
+  margin: 0;
+}
+
+.flash-sale .language-option label {
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Category Dropdown Styles */
+.flash-sale .category-dropdown-trigger {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  position: relative;
+}
+
+.flash-sale .category-dropdown-trigger:hover {
+  opacity: 0.8;
+}
+
+.flash-sale .category-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  z-index: 1000;
+  display: none;
+  padding: 20px;
+  min-width: 600px;
+  margin-top: 10px;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.flash-sale .category-dropdown.show {
+  display: flex;
+}
+
+.flash-sale .category-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flash-sale .category-header {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 8px;
+}
+
+.flash-sale .category-item {
+  padding: 6px 0;
+  cursor: pointer;
+  color: #666;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.flash-sale .category-item:hover {
+  color: var(--primary);
+}
+
+/* "View All" Clickable Style */
+.flash-sale .category-header[data-clickable="true"] {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.flash-sale .category-header[data-clickable="true"]:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Navigation Link/Icon Hover Effects */
+.flash-sale .frame-9 {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flash-sale .frame-9:hover {
+  opacity: 0.8;
+}
+
+.flash-sale .frame-10:not(.category-dropdown-trigger) {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flash-sale .frame-10:not(.category-dropdown-trigger):hover {
+  opacity: 0.8;
+}
+
+.flash-sale .search-button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flash-sale .search-button:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(11, 86, 131, 0.1);
+}
+
+.flash-sale .search-button:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(11, 86, 131, 0.1);
+}
+
+.flash-sale .heart-pop {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flash-sale .heart-pop:hover {
+  transform: scale(1.1);
+}
+
+.flash-sale .cart-pop {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flash-sale .cart-pop:hover {
+  transform: scale(1.1);
+}
+
+/* Search Input Styles */
+.flash-sale .text-wrapper-9 {
+  outline: none;
+  min-height: 20px;
+}
+
+.flash-sale .text-wrapper-9:empty:before {
+  content: 'Search';
+  color: #999;
+}
+
+.flash-sale .text-wrapper-9:focus {
+  color: #333;
+}
+
+.flash-sale .text-wrapper-9:focus:empty:before {
+  content: '';
+}
+
+/* Footer Link Styles */
+.flash-sale .text-wrapper-17 a,
+.flash-sale .text-wrapper-18 a {
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.flash-sale .text-wrapper-17 a:hover,
+.flash-sale .text-wrapper-18 a:hover {
+  color: #ef9223;
+  transform: translateX(5px);
+}
+
+.flash-sale .text-wrapper-17 a::after,
+.flash-sale .text-wrapper-18 a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ef9223;
+  transition: width 0.3s ease;
+}
+
+.flash-sale .text-wrapper-17 a:hover::after,
+.flash-sale .text-wrapper-18 a:hover::after {
+  width: 100%;
+}
+
+/* Breadcrumb Link Styles */
+.flash-sale .text-wrapper-19 a {
+  color: #b2b2b2;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.flash-sale .text-wrapper-19 a:hover {
+  color: var(--primary);
+}
+
+/* Fix Footer Dimensions */
+.flash-sale .footer {
+  width: 100vw;
+  left: 0;
+  right: 0;
+}
+
+.flash-sale .rectangle-wrapper {
+  width: 100vw;
+  left: 0;
+  right: 0;
+}
+
+/* Update "Recommended" section layout */
+.flash-sale .group {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flash-sale .flash-sales-wrapper {
+  position: relative;
+  width: 253px;
+  height: 48px;
+}
+
+.flash-sale .text-wrapper-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--headings-1-font-family);
+  font-weight: var(--headings-1-font-weight);
+  color: var(--black);
+  font-size: var(--headings-1-font-size);
+  letter-spacing: var(--headings-1-letter-spacing);
+  line-height: var(--headings-1-line-height);
+  font-style: var(--headings-1-font-style);
+}
+
+.flash-sale .view-all-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 1330px;
+  width: 150px;
+  height: 56px;
+  background-color: var(--secondary);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.flash-sale .view-all-button:hover {
+  opacity: 0.8;
+}
+
+.flash-sale .text-wrapper-12 {
+  position: absolute;
+  top: 15px;
+  left: 45px;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: #000000;
+  font-size: var(--buttons-font-size);
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale {
+  position: relative;
+  width: 100vw;
+  height: 3372px;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.flash-sale .frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0px 100px;
+  position: absolute;
+  top: 1996px;
+  left: 0;
+  right: 0;
+}
+
+.flash-sale .section-title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .div {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+  margin-right: -3px;
+}
+
+.flash-sale .rectangle {
+  position: relative;
+  width: 20px;
+  height: 40px;
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.flash-sale .text-wrapper {
+  position: relative;
+  width: fit-content;
+  font-family: var(--headings-3-font-family);
+  font-weight: var(--headings-3-font-weight);
+  color: var(--primary);
+  font-size: var(--headings-3-font-size);
+  letter-spacing: var(--headings-3-letter-spacing);
+  line-height: var(--headings-3-line-height);
+  font-style: var(--headings-3-font-style);
+}
+
+.flash-sale .group {
+  position: relative;
+  width: 251px;
+  height: 48px;
+}
+
+.flash-sale .flash-sales-wrapper {
+  position: relative;
+  width: 253px;
+  height: 48px;
+}
+
+.flash-sale .text-wrapper-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--headings-1-font-family);
+  font-weight: var(--headings-1-font-weight);
+  color: var(--black);
+  font-size: var(--headings-1-font-size);
+  letter-spacing: var(--headings-1-letter-spacing);
+  line-height: var(--headings-1-line-height);
+  font-style: var(--headings-1-font-style);
+}
+
+.flash-sale .frame-2 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.flash-sale .frame-2::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.flash-sale .product-card {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  min-width: 280px;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flash-sale .product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.flash-sale .div-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .elements-card {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 349px;
+  background-image: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/paste-image.svg);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.flash-sale .button-hover {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  width: 230px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 24px;
+  position: absolute;
+  top: 286px;
+  left: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: #0b5683;
+  box-shadow: var(--shadow-01);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flash-sale .button-hover:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.flash-sale .button-hover.added {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.flash-sale .button-hover.added .get-started {
+  color: #ffffff;
+}
+
+.flash-sale .get-started {
+  position: relative;
+  width: fit-content;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: var(--black);
+  font-size: var(--buttons-font-size);
+  text-align: center;
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .add-to-wishlist {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px;
+  position: absolute;
+  top: 16px;
+  left: 214px;
+  background-color: #ffffff;
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px #00000040;
+  cursor: pointer;
+}
+
+.flash-sale .heart-outline {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-image: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/heart.svg);
+  background-size: 100% 100%;
+}
+
+.flash-sale .badges {
+  display: flex;
+  flex-direction: column;
+  width: 64px;
+  align-items: flex-start;
+  gap: 8px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.flash-sale .badge-medium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 14px;
+  position: relative;
+  flex: 0 0 auto;
+  margin-right: -3px;
+  background-color: var(--secondary);
+  border-radius: 4px;
+}
+
+.flash-sale .new {
+  position: relative;
+  width: 39px;
+  margin-top: -1px;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: var(--black-900);
+  font-size: var(--buttons-font-size);
+  text-align: center;
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .text-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .five-star {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .text-wrapper-3 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--headings-3-font-family);
+  font-weight: var(--headings-3-font-weight);
+  color: var(--neutral-07100);
+  font-size: var(--headings-3-font-size);
+  letter-spacing: var(--headings-3-letter-spacing);
+  line-height: var(--headings-3-line-height);
+  font-style: var(--headings-3-font-style);
+}
+
+.flash-sale .discount {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--headings-3-font-family);
+  font-weight: var(--headings-3-font-weight);
+  color: var(--black);
+  font-size: var(--headings-3-font-size);
+  letter-spacing: var(--headings-3-letter-spacing);
+  line-height: var(--headings-3-line-height);
+  font-style: var(--headings-3-font-style);
+}
+
+.flash-sale .new-wrapper {
+  display: flex;
+  width: 67px;
+  margin-right: -3px;
+  background-color: #17bf50;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 14px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 4px;
+}
+
+.flash-sale .new-2 {
+  width: fit-content;
+  margin-left: -5px;
+  margin-right: -5px;
+  color: var(--black-900);
+  position: relative;
+  margin-top: -1px;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  font-size: var(--buttons-font-size);
+  text-align: center;
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .text-wrapper-5 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  opacity: 0.5;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: var(--grey);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  text-decoration: line-through;
+  white-space: nowrap;
+}
+
+.flash-sale .badges-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.flash-sale .div-wrapper {
+  display: inline-flex;
+  background-color: var(--primary);
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 14px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 4px;
+}
+
+.flash-sale .new-3 {
+  width: fit-content;
+  color: #fdfdfd;
+  position: relative;
+  margin-top: -1px;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  font-size: var(--buttons-font-size);
+  text-align: center;
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .heart-outline-2 {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-image: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/heart-13.svg);
+  background-size: 100% 100%;
+}
+
+.flash-sale .get-started-wrapper {
+  display: flex;
+  width: 230px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 24px;
+  position: absolute;
+  top: 286px;
+  left: 16px;
+  background-color: var(--primary);
+  border-radius: 8px;
+  box-shadow: var(--shadow-01);
+}
+
+.flash-sale .get-started-2 {
+  position: relative;
+  width: fit-content;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: #fdfdfd;
+  font-size: var(--buttons-font-size);
+  text-align: center;
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .frame-5 {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 1396px;
+  left: 0;
+  right: 0;
+  background-color: var(--button);
+}
+
+.flash-sale .overlap-group {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  top: 0;
+  left: 734px;
+}
+
+.flash-sale .ellipse {
+  position: absolute;
+  width: 504px;
+  height: 500px;
+  top: 0;
+  left: 26px;
+  background-color: #d9d9d9;
+  border-radius: 252px/250px;
+  filter: blur(100px);
+  opacity: 0.3;
+}
+
+.flash-sale .JBL-BOOMBOX-HERO-wrapper {
+  position: absolute;
+  width: 600px;
+  height: 420px;
+  top: 37px;
+  left: 0;
+}
+
+.flash-sale .JBL-BOOMBOX-HERO {
+  position: absolute;
+  width: 568px;
+  height: 330px;
+  top: 45px;
+  left: 16px;
+}
+
+.flash-sale .enhance-your-music {
+  position: absolute;
+  width: 401px;
+  top: 121px;
+  left: 102px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: 48px;
+}
+
+.flash-sale .span {
+  font-weight: 600;
+  color: #f9f9f9;
+  line-height: 67.2px;
+}
+
+.flash-sale .text-wrapper-6 {
+  font-weight: 600;
+  color: #ef9223;
+  line-height: 67.2px;
+}
+
+.flash-sale .button {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  position: absolute;
+  top: 356px;
+  left: 102px;
+}
+
+.flash-sale .explore-more-wrapper {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 56px;
+  background-color: var(--secondary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.flash-sale .explore-more {
+  position: absolute;
+  top: 15px;
+  left: 66px;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: #000000;
+  font-size: var(--buttons-font-size);
+  text-align: center;
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .add-address-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff80;
+  width: 100%;
+  padding: 0 100px;
+}
+
+.flash-sale .frame-6 {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-7 {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 4px 0px 4px 100px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .logo-removebg {
+  position: relative;
+  width: 71px;
+  height: 88px;
+}
+
+.flash-sale .account {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.flash-sale .nav {
+  display: inline-flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-8 {
+  display: inline-flex;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-9 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-color: #0b5683;
+}
+
+.flash-sale .text-wrapper-7 {
+  position: relative;
+  width: fit-content;
+  margin-top: -2px;
+  font-family: var(--headings-3-font-family);
+  font-weight: var(--headings-3-font-weight);
+  color: var(--primary);
+  font-size: var(--headings-3-font-size);
+  letter-spacing: var(--headings-3-letter-spacing);
+  line-height: var(--headings-3-line-height);
+  font-style: var(--headings-3-font-style);
+}
+
+.flash-sale .text-wrapper-8 {
+  position: relative;
+  width: fit-content;
+  margin-top: -3px;
+  font-family: var(--headings-3-font-family);
+  font-weight: var(--headings-3-font-weight);
+  color: var(--black);
+  font-size: var(--headings-3-font-size);
+  letter-spacing: var(--headings-3-letter-spacing);
+  line-height: var(--headings-3-line-height);
+  font-style: var(--headings-3-font-style);
+}
+
+.flash-sale .frame-10 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-11 {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 100px 22px 0px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .search-button {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  width: 300px;
+  height: 56px;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 24px;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: #141718;
+}
+
+.flash-sale .search {
+  position: relative;
+  width: 25.5px;
+  height: 25.5px;
+  margin-left: -0.75px;
+}
+
+.flash-sale .text-wrapper-9 {
+  position: relative;
+  flex: 1;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: var(--black);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.flash-sale .overlap-group-wrapper {
+  position: relative;
+  width: 43px;
+  height: 24px;
+}
+
+.flash-sale .overlap-group-2 {
+  position: relative;
+  width: 41px;
+  height: 24px;
+}
+
+.flash-sale .text-wrapper-10 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: var(--black);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.flash-sale .ic-baseline-chevron-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 0;
+  left: 17px;
+}
+
+.flash-sale .ic-baseline-chevron {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transform: rotate(90deg);
+}
+
+.flash-sale .vector {
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  top: 8px;
+  left: 6px;
+  transform: rotate(-90deg);
+}
+
+.flash-sale .img-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.flash-sale .heart-pop {
+  position: absolute;
+  width: 27px;
+  height: 28px;
+  top: -3px;
+  left: -1px;
+}
+
+.flash-sale .cart-pop {
+  position: absolute;
+  width: 28px;
+  height: 26px;
+  top: -1px;
+  left: -1px;
+}
+
+.flash-sale .brands-logos {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 0px 50px;
+  position: absolute;
+  top: 2673px;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+}
+
+.flash-sale .brands-logos::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.flash-sale .team-logo-logo {
+  position: relative;
+  width: 167px;
+  height: 64px;
+  background: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/team-logo-logo-6.png) 50% 50% / cover;
+  opacity: 0.4;
+}
+
+.flash-sale .team-logo-logo-2 {
+  background: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/team-logo-logo-04.png) 50% 50% / cover;
+  position: relative;
+  width: 167px;
+  height: 64px;
+  opacity: 0.4;
+}
+
+.flash-sale .team-logo-logo-3 {
+  background: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/team-logo-logo-05.png) 50% 50% / cover;
+  position: relative;
+  width: 167px;
+  height: 64px;
+  opacity: 0.4;
+}
+
+.flash-sale .team-logo-logo-4 {
+  background: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/team-logo-logo-02.png) 50% 50% / cover;
+  position: relative;
+  width: 167px;
+  height: 64px;
+  opacity: 0.4;
+}
+
+.flash-sale .team-logo-logo-5 {
+  background: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/team-logo-logo-8.png) 50% 50% / cover;
+  position: relative;
+  width: 167px;
+  height: 64px;
+  opacity: 0.4;
+}
+
+.flash-sale .footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 535px;
+  align-items: center;
+  gap: 40px;
+  padding: 0px 50px 100px;
+  position: absolute;
+  top: 2837px;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+.flash-sale .rectangle-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 465px;
+  top: 95px;
+  left: 0;
+  background-color: var(--primary);
+}
+
+.flash-sale .img {
+  position: absolute;
+  width: 392px;
+  height: 465px;
+  top: 0;
+  left: 0;
+}
+
+.flash-sale .frame-12 {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 64px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(12, 87, 132, 1) 0%, rgba(3, 20, 30, 1) 100%);
+}
+
+.flash-sale .p {
+  position: relative;
+  width: 499px;
+  height: 94px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: var(--white);
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: 45px;
+}
+
+.flash-sale .frame-13 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-14 {
+  display: flex;
+  width: 349px;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.flash-sale .text-wrapper-11 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--popup-font-family);
+  font-weight: var(--popup-font-weight);
+  color: #00000066;
+  font-size: var(--popup-font-size);
+  letter-spacing: var(--popup-letter-spacing);
+  line-height: var(--popup-line-height);
+  font-style: var(--popup-font-style);
+}
+
+.flash-sale .frame-15 {
+  display: flex;
+  width: 349px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 16px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.flash-sale .text-wrapper-12 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.flash-sale .group-2 {
+  position: relative;
+  width: 1250px;
+  height: 316px;
+  margin-bottom: -97px;
+}
+
+.flash-sale .logo {
+  position: absolute;
+  width: 182px;
+  height: 236px;
+  top: 40px;
+  left: 0;
+}
+
+.flash-sale .group-3 {
+  position: absolute;
+  width: 945px;
+  height: 316px;
+  top: 0;
+  left: 305px;
+}
+
+.flash-sale .frame-16 {
+  display: flex;
+  flex-direction: column;
+  width: 945px;
+  align-items: flex-start;
+  gap: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flash-sale .frame-17 {
+  display: flex;
+  align-items: flex-start;
+  gap: 84px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-18 {
+  display: flex;
+  flex-direction: column;
+  width: 274px;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+}
+
+.flash-sale .frame-19 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-20 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .group-4 {
+  position: relative;
+  width: 24px;
+  height: 28px;
+}
+
+.flash-sale .vector-wrapper {
+  position: relative;
+  width: 26px;
+  height: 30px;
+  top: -1px;
+  left: -1px;
+  background-image: url(https://c.animaapp.com/mdgqos96RpKJaZ/img/vector-7.svg);
+  background-size: 100% 100%;
+}
+
+.flash-sale .vector-2 {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 8px;
+  left: 9px;
+}
+
+.flash-sale .text-wrapper-13 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--headings-2-font-family);
+  font-weight: var(--headings-2-font-weight);
+  color: var(--white);
+  font-size: var(--headings-2-font-size);
+  letter-spacing: var(--headings-2-letter-spacing);
+  line-height: var(--headings-2-line-height);
+  font-style: var(--headings-2-font-style);
+}
+
+.flash-sale .frame-21 {
+  display: flex;
+  flex-direction: column;
+  width: 261px;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .div-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-22 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-23 {
+  display: flex;
+  flex-direction: column;
+  width: 259px;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-24 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 45px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .text-wrapper-14 {
+  color: var(--white);
+  font-size: var(--headings-3-font-size);
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--headings-3-font-family);
+  font-weight: var(--headings-3-font-weight);
+  letter-spacing: var(--headings-3-letter-spacing);
+  line-height: var(--headings-3-line-height);
+  font-style: var(--headings-3-font-style);
+}
+
+.flash-sale .frame-25 {
+  display: flex;
+  flex-direction: column;
+  width: 170px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.flash-sale .text-wrapper-15 {
+  position: relative;
+  width: 185px;
+  margin-top: -1px;
+  margin-right: -15px;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: var(--white);
+  font-size: var(--buttons-font-size);
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .frame-26 {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-27 {
+  display: flex;
+  flex-direction: column;
+  width: 172px;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.flash-sale .salah-salem-st-al {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: var(--white);
+  font-size: var(--buttons-font-size);
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .text-wrapper-16 {
+  position: relative;
+  align-self: stretch;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: var(--white);
+  font-size: var(--buttons-font-size);
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .frame-28 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .vector-3 {
+  position: relative;
+  width: 33.5px;
+  height: 25.5px;
+  margin-left: -0.75px;
+}
+
+.flash-sale .frame-29 {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-30 {
+  display: flex;
+  flex-direction: column;
+  width: 165px;
+  align-items: flex-start;
+  position: relative;
+  margin-right: -2px;
+}
+
+.flash-sale .text-wrapper-17 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: var(--white);
+  font-size: var(--buttons-font-size);
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .text-wrapper-18 {
+  position: relative;
+  width: fit-content;
+  font-family: var(--buttons-font-family);
+  font-weight: var(--buttons-font-weight);
+  color: var(--white);
+  font-size: var(--buttons-font-size);
+  letter-spacing: var(--buttons-letter-spacing);
+  line-height: var(--buttons-line-height);
+  font-style: var(--buttons-font-style);
+}
+
+.flash-sale .frame-31 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .frame-32 {
+  position: absolute;
+  width: 280px;
+  height: 40px;
+  top: 276px;
+  left: 332px;
+}
+
+.flash-sale .home-flash-sale {
+  position: absolute;
+  top: 149px;
+  left: 0;
+  right: 0;
+  padding: 0px 100px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+
+.flash-sale .text-wrapper-19 {
+  font-weight: var(--headings-3-font-weight);
+  color: #b2b2b2;
+  font-family: var(--headings-3-font-family);
+  font-style: var(--headings-3-font-style);
+  letter-spacing: var(--headings-3-letter-spacing);
+  line-height: var(--headings-3-line-height);
+  font-size: var(--headings-3-font-size);
+}
+
+.flash-sale .text-wrapper-20 {
+  font-weight: 500;
+  color: #000000;
+}
+
+.flash-sale .frame-33 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  gap: 16px;
+  position: absolute;
+  top: 224px;
+  left: 0;
+  right: 0;
+  padding: 0px 100px;
+}
+
+.flash-sale .frame-34 {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.flash-sale .group-5 {
+  position: relative;
+  width: 571px;
+  height: 54px;
+}
+
+.flash-sale .group-6 {
+  position: absolute;
+  width: 184px;
+  height: 48px;
+  top: 6px;
+  left: 0;
+}
+
+.flash-sale .group-wrapper {
+  position: absolute;
+  width: 255px;
+  height: 53px;
+  top: 0;
+  left: 316px;
+}
+
+.flash-sale .group-7 {
+  height: 53px;
+}
+
+.flash-sale .group-8 {
+  position: relative;
+  width: 255px;
+  height: 53px;
+}
+
+.flash-sale .frame-35 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.flash-sale .text-wrapper-21 {
+  position: relative;
+  width: 31px;
+  margin-top: -1px;
+  font-family: var(--title-12px-medium-font-family);
+  font-weight: var(--title-12px-medium-font-weight);
+  color: var(--black);
+  font-size: var(--title-12px-medium-font-size);
+  letter-spacing: var(--title-12px-medium-letter-spacing);
+  line-height: var(--title-12px-medium-line-height);
+  font-style: var(--title-12px-medium-font-style);
+}
+
+.flash-sale .text-wrapper-22 {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: var(--black);
+  font-size: 32px;
+  letter-spacing: 1.28px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.flash-sale .frame-36 {
+  display: flex;
+  flex-direction: column;
+  width: 35px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: absolute;
+  top: 1px;
+  left: 78px;
+}
+
+.flash-sale .frame-37 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.flash-sale .text-wrapper-23 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: var(--title-12px-medium-font-family);
+  font-weight: var(--title-12px-medium-font-weight);
+  color: var(--black);
+  font-size: var(--title-12px-medium-font-size);
+  letter-spacing: var(--title-12px-medium-letter-spacing);
+  line-height: var(--title-12px-medium-line-height);
+  font-style: var(--title-12px-medium-font-style);
+}
+
+.flash-sale .text-wrapper-24 {
+  margin-left: -2px;
+  margin-right: -2px;
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: var(--black);
+  font-size: 32px;
+  letter-spacing: 1.28px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.flash-sale .frame-38 {
+  display: flex;
+  flex-direction: column;
+  width: 35px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: absolute;
+  top: 1px;
+  left: 149px;
+}
+
+.flash-sale .text-wrapper-25 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  margin-left: -6.5px;
+  margin-right: -6.5px;
+  font-family: var(--title-12px-medium-font-family);
+  font-weight: var(--title-12px-medium-font-weight);
+  color: var(--black);
+  font-size: var(--title-12px-medium-font-size);
+  letter-spacing: var(--title-12px-medium-letter-spacing);
+  line-height: var(--title-12px-medium-line-height);
+  white-space: nowrap;
+  font-style: var(--title-12px-medium-font-style);
+}
+
+.flash-sale .frame-39 {
+  display: flex;
+  flex-direction: column;
+  width: 35px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: absolute;
+  top: 1px;
+  left: 220px;
+}
+
+.flash-sale .text-wrapper-26 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  margin-left: -8.5px;
+  margin-right: -8.5px;
+  font-family: var(--title-12px-medium-font-family);
+  font-weight: var(--title-12px-medium-font-weight);
+  color: var(--black);
+  font-size: var(--title-12px-medium-font-size);
+  letter-spacing: var(--title-12px-medium-letter-spacing);
+  line-height: var(--title-12px-medium-line-height);
+  white-space: nowrap;
+  font-style: var(--title-12px-medium-font-style);
+}
+
+.flash-sale .text-wrapper-27 {
+  margin-left: -4px;
+  margin-right: -4px;
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: var(--black);
+  font-size: 32px;
+  letter-spacing: 1.28px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.flash-sale .semiclone {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: absolute;
+  top: 27px;
+  left: 58px;
+}
+
+.flash-sale .ellipse-2 {
+  position: relative;
+  width: 4px;
+  height: 4px;
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
+
+.flash-sale .semiclone-2 {
+  left: 129px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: absolute;
+  top: 27px;
+}
+
+.flash-sale .semiclone-3 {
+  left: 200px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: absolute;
+  top: 27px;
+}
+
+.flash-sale .frame-40 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px 48px;
+  padding: 8px 0px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  overflow-x: scroll;
+}
+
+.flash-sale .frame-40::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.flash-sale .group-9 {
+  position: fixed;
+  width: 48px;
+  height: 120px;
+  top: 582px;
+  left: 1340px;
+}
+
+.flash-sale .group-10 {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 0;
+  left: 0;
+}
+
+.flash-sale .frame-41 {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 72px;
+  left: 0;
+}
+
+/* Responsive Design for Flash Sale */
+@media (max-width: 1200px) {
+  .flash-sale .frame {
+    padding: 0px 50px;
+  }
+  
+  .flash-sale .section-title {
+    width: 100%;
+  }
+  
+  .flash-sale .product-card {
+    width: 260px;
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flash-sale .frame {
+    padding: 0px 20px;
+  }
+  
+  .flash-sale .product-card {
+    width: 240px;
+    min-width: 240px;
+  }
+  
+  .flash-sale .frame-2 {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flash-sale .product-card {
+    width: 220px;
+    min-width: 220px;
+  }
+  
+  .flash-sale .frame-2 {
+    gap: 12px;
+  }
+}

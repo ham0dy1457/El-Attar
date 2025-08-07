@@ -1,0 +1,367 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Poppins:var(--popup-font-weight),var(--title-12px-medium-font-weight),700,600,var(--headings-2-font-weight),var(--buttons-font-weight),var(--headings-1-font-weight),var(--headings-3-font-weight),400,500");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+/* Hide scrollbars globally */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Footer Styles - Fill White Space */
+.wishlist .footer {
+  width: 100vw;
+  left: 0;
+  right: 0;
+}
+
+.wishlist .rectangle-wrapper {
+  width: 100vw;
+  left: 0;
+  right: 0;
+}
+
+/* Footer Link Styles */
+.wishlist .text-wrapper-17 a,
+.wishlist .text-wrapper-18 a {
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.wishlist .text-wrapper-17 a:hover,
+.wishlist .text-wrapper-18 a:hover {
+  color: #ef9223;
+  transform: translateX(5px);
+}
+
+.wishlist .text-wrapper-17 a::after,
+.wishlist .text-wrapper-18 a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ef9223;
+  transition: width 0.3s ease;
+}
+
+.wishlist .text-wrapper-17 a:hover::after,
+.wishlist .text-wrapper-18 a:hover::after {
+  width: 100%;
+}
+
+/* Navigation Bar Styles */
+.wishlist .frame-9 {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wishlist .frame-9:hover {
+  color: #ef9223;
+}
+
+.wishlist .frame-10 {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wishlist .frame-10:hover {
+  color: #ef9223;
+}
+
+.wishlist .search-button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wishlist .search-button:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.wishlist .img-wrapper {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wishlist .img-wrapper:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* Search Input Styles */
+.wishlist .text-wrapper-9 {
+  cursor: text;
+  transition: all 0.2s ease;
+}
+
+.wishlist .text-wrapper-9:focus {
+  outline: none;
+  color: #333;
+}
+
+.wishlist .text-wrapper-9::placeholder {
+  color: #999;
+}
+
+/* Breadcrumb Link Styles */
+.wishlist .text-wrapper-19 {
+  color: #b2b2b2;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wishlist .text-wrapper-19:hover {
+  color: #0b5683;
+}
+
+.wishlist .text-wrapper-20 {
+  color: #0b5683;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wishlist .text-wrapper-20:hover {
+  color: #ef9223;
+}
+
+/* Product Card Interaction Styles */
+.wishlist .product-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wishlist .product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist .elements-card {
+  cursor: pointer;
+}
+
+.wishlist .button-hover {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wishlist .button-hover:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.wishlist .button-hover.added {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.wishlist .button-hover.added .get-started {
+  color: #ffffff;
+}
+
+.wishlist .add-to-wishlist {
+  cursor: pointer;
+}
+
+/* Navigation Bar Scroll Behavior */
+.wishlist .add-address-nav-bar {
+  transition: transform 0.3s ease-in-out;
+}
+
+.wishlist .add-address-nav-bar.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.wishlist .add-address-nav-bar.nav-visible {
+  transform: translateY(0);
+}
+
+/* Language and Category Dropdown Styles */
+.wishlist .overlap-group-2 {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wishlist .overlap-group-2:hover {
+  opacity: 0.8;
+}
+
+.wishlist .category-dropdown-trigger {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wishlist .category-dropdown-trigger:hover {
+  color: #ef9223;
+}
+
+.wishlist .language-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none;
+  min-width: 150px;
+  padding: 8px 0;
+}
+
+.wishlist .language-dropdown.show {
+  display: block;
+}
+
+.wishlist .language-option {
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wishlist .language-option:hover {
+  background-color: #f5f5f5;
+}
+
+.wishlist .language-option input[type="radio"] {
+  margin: 0;
+}
+
+.wishlist .language-option label {
+  cursor: pointer;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.wishlist .category-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none;
+  min-width: 600px;
+  padding: 16px;
+}
+
+.wishlist .category-dropdown.show {
+  display: flex;
+}
+
+.wishlist .category-column {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.wishlist .category-header {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wishlist .category-item {
+  padding: 4px 0;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: 14px;
+}
+
+.wishlist .category-item:hover {
+  color: #0b5683;
+}
+
+.wishlist .category-header[data-clickable="true"] {
+  color: #0b5683;
+  font-weight: bold;
+}
+
+.wishlist .category-header[data-clickable="true"]:hover {
+  color: #ef9223;
+}
+
+/* Recommended Section Header Layout */
+.wishlist .group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.wishlist .flash-sales-wrapper {
+  flex: 1;
+}
+
+.wishlist .view-all-button {
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wishlist .view-all-button:hover {
+  opacity: 0.8;
+  transform: translateX(2px);
+}
+
+.wishlist .text-wrapper-12 {
+  color: #0b5683;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.wishlist .text-wrapper-12:hover {
+  color: #ef9223;
+}
+
+/* Product Grid Layout */
+.wishlist .frame-2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 24px;
+  position: relative;
+  align-self: stretch;
+  flex: 0 0 auto;
+  overflow-x: visible;
+  scroll-behavior: smooth;
+}
