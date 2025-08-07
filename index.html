@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    function isMobileDevice() {
+      return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    window.onload = function () {
+      if (isMobileDevice()) {
+        alert("Redirecting to phone version");
+        window.location.href = "phone/english/index.html";
+      } else {
+        alert("Redirecting to PC version");
+        window.location.href = "pc/english/index.html";
+      }
+    };
+  </script>
+</head>
+<body>
+  <h2>جارٍ التوجيه حسب نوع الجهاز...</h2>
+</body>
+</html>
